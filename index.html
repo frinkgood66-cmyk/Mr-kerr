@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Study Assistant - Offline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Exam Study Assistant</h1>
+            <p class="subtitle">Offline Study Guide - Add and Review Your Exam Questions</p>
+        </header>
+
+        <main>
+            <!-- Add Question Section -->
+            <section class="add-question-section">
+                <h2>Add Question</h2>
+                <form id="questionForm">
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <input 
+                            type="text" 
+                            id="question" 
+                            placeholder="Enter your exam question" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="answer">Answer:</label>
+                        <textarea 
+                            id="answer" 
+                            placeholder="Enter the answer" 
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject (Optional):</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            placeholder="e.g., Math, History, Biology"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Question</button>
+                </form>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <h2>Search & Review</h2>
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search questions..." 
+                        autocomplete="off"
+                    >
+                    <select id="subjectFilter">
+                        <option value="">All Subjects</option>
+                    </select>
+                    <button class="btn btn-secondary" onclick="clearAllQuestions()">Clear All</button>
+                </div>
+            </section>
+
+            <!-- Questions Display Section -->
+            <section class="questions-section">
+                <h2>Your Questions (<span id="questionCount">0</span>)</h2>
+                <div id="questionsList" class="questions-list">
+                    <p class="empty-state">No questions yet. Add one to get started!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>💾 All data is stored locally on your device | Offline Mode</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
